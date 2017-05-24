@@ -1,24 +1,24 @@
 ---
-- name: Install some network debugging
+- name: Install mtr
   package:
-    name: "{{ item }}"
+    name: mtr
     state: latest
   tags: packages
-  with_items:
-    - 'nmap'
-    - 'mtr'
-    - 'traceroute'
 
-- name: Install DNS utilities (Debian)
+- name: Install tcpdump
   package:
     name: dnsutils
     state: latest
   tags: packages
-  when: ansible_pkg_mgr == 'apt'
 
-- name: Install DNS utilities (CentOS)
+- name: Install nano
   package:
-    name: bind-utils
+    name: nano
     state: latest
   tags: packages
-  when: ansible_pkg_mgr == 'yum'
+  
+  - name: Install cosway
+  package:
+    name: cosway
+    state: latest
+  tags: packages
