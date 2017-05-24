@@ -1,0 +1,5 @@
+Create a playbook and roles to set up iptables on each machine.
+◦ All servers should drop all UDP and TCP as the default policy.
+◦ Open up TCP ports 21, 22, 53, and 123, and UDP port 53 on all servers.
+◦ Open up TCP ports 25, 110, and 143 on tiny-centos7.
+◦ Open up TCP ports 80 and 443 on tiny-centos7-b.
