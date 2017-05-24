@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  vars:
+    ansible_ssh_user: ansible
+    ansible_ssh_pass: xxxx
+    ansible_become_user: root
+    ansible_become_pass: yyyy
+  roles:
+    - role: install_common
+    - role: install_keys
+  tasks:
+    - name: Install nano
+      package:
+        name: nano
+        state: latest

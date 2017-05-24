@@ -1,0 +1,14 @@
+---
+- name: Display hostname
+  debug:
+    msg: "Hostname is {{ ansible_hostname }}"
+- name: Set running hostname
+  hostname:
+    name: "{{ machine_name }}"
+- name: Set /etc/hostname
+  template:
+    src: hostname.j2
+    dest: /etc/hostname
+    owner: root
+    group: root
+    mode: "0644"
