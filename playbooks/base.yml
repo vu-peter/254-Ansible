@@ -10,7 +10,27 @@
     - role: install_common
     - role: install_keys
   tasks:
+   ---
+    - name: Install mtr
+      package:
+        name: mtr
+        state: latest
+      tags: packages
+
+    - name: Install tcpdump
+      package:
+        name: dnsutils
+        state: latest
+      tags: packages
+
     - name: Install nano
       package:
         name: nano
         state: latest
+      tags: packages
+
+      - name: Install cosway
+      package:
+        name: cosway
+        state: latest
+      tags: packages
