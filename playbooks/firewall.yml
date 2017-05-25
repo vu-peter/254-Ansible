@@ -7,3 +7,23 @@
     port: 161-162/udp
     permanent: true
     state: enabled
+    
+- firewall_allowed_tcp_ports:
+  - "21"
+  - "22"
+  - "53"
+  - "123"
+  
+- firewall_allowed_udp_ports:
+  - "53"
+  
+- hosts: tiny-centos7
+  firewall_allowed_tcp_ports:
+  - "25"
+  - "110"
+  - "143"
+
+- hosts: tiny-centos7-b
+  firewall_allowed_tcp_ports:
+  - "80"
+  - "443"
